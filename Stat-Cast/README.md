@@ -46,7 +46,7 @@ This is a MERN stack application for a Football Statistics website created using
 Routes
 /api
 
-![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/1.png)
+![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/1.png?raw=true)
 
 
 Featured top players

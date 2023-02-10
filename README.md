@@ -46,7 +46,7 @@ This is a MERN stack application for a Football Statistics website created using
 Routes
 /api
 
-![alt text](../imgs/1.png)
+![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/1.png?raw=true)
 
 
 Featured top players
@@ -58,7 +58,7 @@ Routes
 /api/stats
 /api/teams/:playerId
 
-![alt text](../imgs/2.png)
+![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/2.png?raw=true)
 
 
 
@@ -70,7 +70,7 @@ Routes
 /api/teams
 /api/teams/:teamId
 
-![alt text](../imgs/3.png)
+![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/3.png?raw=true)
 
 Shows roster of each team and their positions
 Set up 5 man team(football) 
@@ -83,7 +83,7 @@ Routes
 /api/shop
 /api/shop/:itemId
 
-![alt text](../imgs/4.png)
+![alt text](https://github.com/YehOkiHub/Stat-Cast/blob/main/imgs/4.png?raw=true)
 
 Create page with donation or merchandise
 
