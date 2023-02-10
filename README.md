@@ -53,7 +53,7 @@ Featured top players
 Featured top teams
 Media section with videos
 
-##Stats
+##Stats<br>
 Routes
 /api/stats
 /api/teams/:playerId
@@ -65,7 +65,7 @@ Routes
 Show stats on single player, as well as all players
 Able to CR(Creat and Read) but Cannot DELETE or UPDATE.
 
-##Teams
+##Teams<br>
 Routes
 /api/teams
 /api/teams/:teamId
@@ -78,7 +78,7 @@ Able to CRUD(create, read, update, delete) for Dream Team
 
 Extra: Give each team roster a rating based on some stats?
 
-##Shop
+##Shop<br>
 Routes
 /api/shop
 /api/shop/:itemId
