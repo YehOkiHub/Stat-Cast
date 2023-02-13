@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 function Nav() {
 
     return(
-        <div class="container">
+        <div className="container">
         <nav className="nav">
+        <img className="logo" src={"https://dolphinseer.files.wordpress.com/2022/05/image-18.png"}/>
           <ul>
             <li>
               <Link className="navLink" to={"/"}>
@@ -27,6 +28,7 @@ function Nav() {
                 Shop
               </Link>
             </li>
+            
           </ul>
         </nav>
         </div>
