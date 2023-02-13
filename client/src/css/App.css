@@ -1,0 +1,88 @@
+.container{
+    width: 100%;
+    background-color: rgb(8, 4, 71);
+    color: white;
+    height: 90px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    
+  }
+  
+  .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;    
+    float: right;
+    margin-right: 15px;
+    
+  }
+  
+  li a {    
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+
+.navLink {
+    padding: 5px 10px;
+text-decoration: none;
+color: white;
+font-size: 22.5px;;
+}
+
+.navLink:hover {
+    
+    border-radius: 10px;
+    color: rgb(137, 106, 28)
+
+}
+
+
+.topplayers {
+  max-height:700px;  
+  margin-bottom: 5%;
+  border: solid red 5px;
+  overflow: hidden;
+}
+
+.topteams {
+  border: solid red 5px;
+}
+
+img {
+   position: relative;
+   top: -250px;
+   right: -706px;
+  
+}
+h1 {
+  margin-left:100px;
+}
+
+p {
+  margin-left: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.logo {
+  position: absolute;
+  
+  left: -325%;
+  top: 50%;
+  max-height: 60px;
+  z-index: 999;
+  
+}
