@@ -9,7 +9,13 @@ const resolvers = {
         addUser: async (userdata) => {
             return await User.create(userdata)
         }
-    }
+    },
+
+
+
+
+
+    
 }
 
 

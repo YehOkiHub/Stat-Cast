@@ -19,8 +19,4 @@ const router = require('express').Router();
 // router.route("/:userId/friends/:friendId").delete(deleteFriend);
 
 
-module.exports = router
-
-
-
 module.exports = router;
