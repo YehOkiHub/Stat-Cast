@@ -9,9 +9,6 @@ const router = require('express').Router();
 // // /api/shop/:productId/remove
 // router.route("/:productId/remove").delete(removeFromcart)
 
-module.exports = router
-
-
 
 
 module.exports = router;

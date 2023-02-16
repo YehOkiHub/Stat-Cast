@@ -3,10 +3,11 @@ const {ApolloServer} = require("apollo-server-express");
 const cors = require("cors");
 const {resolvers, typeDefs} = require("./schemas/index")
 const connection = require("./connection/connection");
-
+const jwt = require("jsonwebtoken");
 const routes = require("./routes/index")
 const app = express();
 const server = new ApolloServer({resolvers, typeDefs})
+require("dotenv").config()
 
 app.use(routes);
 
@@ -38,3 +39,18 @@ const PORT = process.env.PORT || 3000;
 
 }
 startApolloServer(typeDefs, resolvers)
+
+
+
+app.post("/login", (req, res) => {
+
+    const username = req.body.username
+    const user = { name: username }
+    console.log(process.env.ACCESS_TOKEN_SECRET)
+
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+    res.json({ accessToken: accessToken })
+
+
+
+})
