@@ -15,7 +15,7 @@ const resolvers = {
             let user = await User.findOne({
                 username: args.username, password: args.password
             })
-            
+            console.log(user)
             return user
     
         }

@@ -33,6 +33,11 @@ function Nav() {
                 Login
               </Link>
             </li>
+            <li>
+              <Link className="navLink" to={"/profile"}>
+                Profile
+              </Link>
+            </li>
 
 
             
