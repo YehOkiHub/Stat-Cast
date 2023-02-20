@@ -4,6 +4,8 @@ import Stats from "./../src/components/Stats";
 import Shop from "./../src/components/Shop";
 import Teams from "./../src/components/Teams";
 import Login from "./../src/components/Login";
+import Profile from "./../src/components/Profile";
+import Dashboard from "./../src/components/Dashboard";
 import Registration from "./../src/components/Registration";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -24,6 +26,8 @@ const App = () => {
           <Route path= "/shop" element = {<Shop/>}></Route >
           <Route path= "/teams" element = {<Teams/>}></Route >
           <Route path= "/login" element = {<Login/>}></Route >
+          <Route path= "/dashboard" element = {<Dashboard/>}></Route >
+          <Route path= "/profile" element = {<Profile/>}></Route >
           <Route path= "/registration" element = {<Registration/>}></Route >
         </Routes>
       </Router>
