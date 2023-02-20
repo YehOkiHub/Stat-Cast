@@ -1,0 +1,60 @@
+import React, { useState } from "react";
+import Nav from "./../components/Nav";
+import { Link } from "react-router-dom";
+import Registration from "./../components/Registration";
+import { useMutation } from "@apollo/client";
+import { AUTH } from "./../utils/Mutation";
+
+function Login() {
+  const [userdata, setUserdata] = useState({
+    username: "",
+    password: "",
+  }); 
+  const [auth, {    error, data  }] = useMutation(AUTH)
+  let handleInput = function (event) {
+    let target = event.target;
+    let name = target.name;
+    let value = target.value;
+
+    setUserdata({ ...userdata, [name]: value });
+  };
+  let handleSubmit = async function (event) {
+    event.preventDefault();
+    const response = await auth({
+      variables: userdata,
+    });
+    if(response.data.auth == null){
+        alert("Invalid username or password")
+    }
+    
+  };
+
+  return (
+    <div>
+      <Nav />
+
+      <div className="accContainer">
+        <form onSubmit={handleSubmit}>
+          <div className="group">
+            <h1>Account Login</h1>
+          </div>
+
+          <div className="group">
+            <input type="text" placeholder="Enter Username" onChange={handleInput} name = "username"/>
+          </div>
+          <div className="group">
+            <input type="password" placeholder="Enter Password" onChange={handleInput} name = "password" />
+          </div>
+          <div className="group">
+            <button className="button">Login</button>
+          </div>
+          <div className="group">
+            <Link to="/registration">Register an Account</Link>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Login;

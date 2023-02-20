@@ -4,12 +4,23 @@ const resolvers = {
         users: async () => {
             return await User.find()
         }
+        
     },
     Mutation: {
-        addUser: async (userdata) => {
-            return await User.create(userdata)
+        addUser: async (parent, args) => {
+            return await User.create(args)
+            
+        },
+        auth: async (parent, args) => {            
+            let user = await User.findOne({
+                username: args.username, password: args.password
+            })
+            
+            return user
+    
         }
     },
+    
 
 
 
