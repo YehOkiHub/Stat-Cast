@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import Registration from "./../components/Registration";
 import { useMutation } from "@apollo/client";
 import { AUTH } from "./../utils/Mutation";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import Auth from "./../utils/auth";
+
+
 
 function Login() {
+  
 
   const navigate = useNavigate()
   const [userdata, setUserdata] = useState({
@@ -23,12 +27,21 @@ function Login() {
   };
   let handleSubmit = async function (event) {
     event.preventDefault();
-    const response = await auth({
-      variables: userdata,
-    });
-    if(response.data.auth == null){
-        return alert("Invalid username or password")
+    try {
+      const response = await auth({
+        variables: userdata,
+        
+      });
+      
+      Auth.login(response.data.auth.token)
+      window.location.href="/profile"
+      
     }
+    catch(err) {
+      alert("Wrong Username or Password")
+
+    }
+    
     // navigate("/dashboard");
   };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Auth from "./../utils/auth";
 
 function Nav() {
 
@@ -28,16 +29,26 @@ function Nav() {
                 Shop
               </Link>
             </li>
-            <li>
+            
+            {!Auth.loggedIn() ? (
+              <><li>
               <Link className="navLink" to={"/login"}>
                 Login
               </Link>
-            </li>
-            <li>
-              <Link className="navLink" to={"/profile"}>
-                Profile
-              </Link>
-            </li>
+            </li> </>
+            )
+          : (<><li>
+            <Link className="navLink" to={"/profile"}>
+              Profile
+            </Link>
+          </li><li>
+            <Link className="navLink" to={"#"} onClick={Auth.logout}>
+              Logout
+            </Link>
+          </li> </>)
+          
+          }
+            
 
 
             

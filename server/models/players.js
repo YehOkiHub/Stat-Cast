@@ -6,10 +6,21 @@ const playerSchema = new Schema({
         type: String,
         required: true
             },
+    age: {
+        type: Number,
+        required:true
+    },
     position: {
         type: String,
         required: true
     },
+    rating: {
+        type: Number,
+        required: true
+    },
+
+
+
     passing: {
         type: Number,
         required: true
@@ -35,22 +46,26 @@ const playerSchema = new Schema({
         required: true
 
     },
-    fieldGoals: {
-        type: Number, 
-        required: true
-    },
-    kickoffs: {
-        type: Number, 
-        required: true
-    },
-    punting: {
-        type: Number,
-        required: true
-    },
-    puntreturns: {
-        type: Number,
-        required: true
+    // fieldGoals: {
+    //     type: Number, 
+    //     required: true
+    // },
+    // kickoffs: {
+    //     type: Number, 
+    //     required: true
+    // },
+    // punting: {
+    //     type: Number,
+    //     required: true
+    // },
+    // puntreturns: {
+    //     type: Number,
+    //     required: true
 
+    // },
+    teamId: {
+        ref: 'team',
+        type: Schema.Types.ObjectId
     }
     
     

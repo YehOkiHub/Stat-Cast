@@ -142,3 +142,44 @@ form .group{
 
   max-width: 600px;
 }
+
+
+.aboutImg{
+
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  box-shadow: 5px 5px .4em rgb(3, 2, 40), -1em 0  rgb(243, 9, 9);
+  
+}
+
+.profilepic {
+
+  margin-top: 180px;
+  float: left;
+  position: absolute;
+  top: 200px;
+  left: -300px;
+  
+}
+
+.pageName {
+
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid grey;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 20px;
+}
+
+table thead {
+  background-color: lightslategray;
+}

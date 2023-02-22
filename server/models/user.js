@@ -15,6 +15,16 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    favplayer: {
+        type:String,
+        required: false,
+        default: null
+    },
+    favteam: {
+        type:String,
+        required: false,
+        default: null
     }
 
     
