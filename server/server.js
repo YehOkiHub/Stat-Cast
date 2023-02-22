@@ -5,8 +5,9 @@ const {resolvers, typeDefs} = require("./schemas/index")
 const connection = require("./connection/connection");
 const jwt = require("jsonwebtoken");
 const routes = require("./routes/index");
+const { authMiddleware } = require("./utils/auth");
 const app = express();
-const server = new ApolloServer({resolvers, typeDefs})
+const server = new ApolloServer({resolvers, typeDefs, context: authMiddleware})
 require("dotenv").config()
 
 app.use(routes);

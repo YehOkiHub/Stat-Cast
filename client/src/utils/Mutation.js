@@ -30,7 +30,11 @@ export const AUTH = gql`
       username: $username
     ) {     
       
-      username
+      token
+      user{
+        _id
+        username
+      }
     }
   }
 `;
