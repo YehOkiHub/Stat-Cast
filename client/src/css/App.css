@@ -99,7 +99,6 @@ body {
   z-index: 999;
   
 }
-<<<<<<< HEAD
 .Store {
   max-height: 700px;
   margin-bottom: 5%;
@@ -111,7 +110,6 @@ body {
 border: solid red 5px;
 
 }
-=======
 
 form {
   width: 100%
@@ -195,5 +193,4 @@ table td {
 
 table thead {
   background-color: lightslategray;
-}
 
