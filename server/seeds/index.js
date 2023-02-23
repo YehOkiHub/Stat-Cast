@@ -1,7 +1,30 @@
 const conn = require("./../connection/connection");
-const { Player, Team } = require("./../models");
+const { Player, Team, Product, User } = require("./../models");
 
 async function run() {
+  const products = [
+    {
+      name: "Autographed Hat",
+      price: 27,
+      autograph: "Eli Manning",
+      description: "This product was autographed by Eli Manning",
+      img: "product1.png",
+    },
+    {
+      name: "Autographed Jersey",
+      price: 40,
+      autograph: "Brett Favre",
+      description: "This product was autographed by Brett Favre",
+      img: "product2.png",
+    },
+    {
+      name: "Autographed Shirt",
+      price: 13,
+      autograph: "Patrick Mahomes",
+      description: "This product was autographed by Patrick Mahomes",
+      img: "product3.png",
+    },
+  ];
   const teams = [
     {
       name: "Arizona Cardinals",
@@ -131,7 +154,7 @@ async function run() {
       name: "Tennessee Titans",
       rating: 83,
     },
-  ]
+  ];
 
   const players = [
     {
@@ -2124,24 +2147,42 @@ async function run() {
       interceptions: 0,
       touchdowns: 7,
     },
-    
-    
-    
   ];
 
-await Team.deleteMany()
-const teamResponse = await Team.insertMany(teams);
-players[0].teamId = teamResponse[0]._id
-players[1].teamId = teamResponse[1]._id
-players[2].teamId = teamResponse[2]._id
+  await Team.deleteMany();
+  const teamResponse = await Team.insertMany(teams);
 
-console.log(players)
+  players.forEach((player, playerIndex) => {
+    if (player.team !== undefined) {
+      let team = teamResponse.filter((t) => {
+        if (t.name == player.team) {
+          return t;
+        }
+      });
 
+      if (
+        team.length > 0 &&
+        team !== null &&
+        team !== undefined &&
+        team !== false
+      ) {
+        // console.log(team[0])
+        players[playerIndex].teamId = team[0]._id;
+      }
+    }
+  });
 
-await Player.deleteMany()
-const playerResponse = await Player.insertMany(players);
-  
+  players[0].teamId = teamResponse[0]._id;
+  players[1].teamId = teamResponse[1]._id;
+  players[2].teamId = teamResponse[2]._id;
+
+  await Player.deleteMany();
+  const playerResponse = await Player.insertMany(players);
+
+  await Product.deleteMany();
+  const productResponse = await Product.insertMany(products);
+
+  await User.deleteMany();
 }
-
 
 run();

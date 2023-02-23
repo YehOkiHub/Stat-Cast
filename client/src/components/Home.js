@@ -1,63 +1,78 @@
 import React from "react";
 import Nav from "./Nav";
+import { useQuery } from "@apollo/client";
+import { GET_TOPPLAYER, GET_TOPTEAM } from "./../utils/Queries";
+
 let imgs = [
-    "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/tom-brady-patriots-falcons-super-bowl-ap-photo-1645650913.jpg?crop=1.00xw:1.00xh;0,0&resize=900:*",
-    "https://media.cnn.com/api/v1/images/stellar/prod/220114122205-20220114-sports-buffalo-bills-josh-allen.jpg?c=16x9&q=h_720,w_1280,c_fill"
-]
+  "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/tom-brady-patriots-falcons-super-bowl-ap-photo-1645650913.jpg?crop=1.00xw:1.00xh;0,0&resize=900:*",
+  "https://media.cnn.com/api/v1/images/stellar/prod/220114122205-20220114-sports-buffalo-bills-josh-allen.jpg?c=16x9&q=h_720,w_1280,c_fill",
+];
 
 function Home() {
-    return (
-        <div>
-            
-            <Nav/>
-            
-            <div className="homebody">
-                <div className="topplayers">
-                    <h1>Top players</h1><br/>
+  let topPlayers = [];
+  const players = useQuery(GET_TOPPLAYER);
+  if (players.loading == false) {
+    topPlayers = players.data.topplayers;
+    topPlayers = topPlayers.slice(0, 10);
+  }
+  let topTeams = [];
+  const teams = useQuery(GET_TOPTEAM);
+  if (teams.loading == false) {
+    topTeams = teams.data.topteams;
+    topTeams = topTeams.slice(0, 10);
+  }
+  return (
+    <div>
+      <Nav />
 
+      <div className="homebody">
+        <div className="wrapper">
+          <div className="topplayers">
+            <div className="grids grids-2">
+              <div className="grid">
+                <h1>Top players</h1>
+                <br />
+                {topPlayers.map((player) => {
+                  return (
                     <p>
-                    Patrick Mahomes, QB, Chiefs. Rating:98<br/>
-                    Aaron Donald, DT, Rams. Rating:97<br/>
-                    Aaron Rodgers, QB, Packers. Rating:99<br/>
-                    Derrick Henry, RB, Titans. Rating:98<br/>
-                    Travis Kelce, TE, Chiefs. Rating:97<br/>
-                    Davante Adams, WR, Packers. Rating:98<br/>
-                    Tom Brady, QB, Buccaneers. Rating:100<br/>
-                    DeAndre Hopkins, WR, Cardinals. Rating:96<br/>
+                      {player.name}, {player.position}, Rating:{player.rating}
+                      <br />
                     </p>
-                    <img src={imgs[0]}/>
-
-
-
-                </div>
-                <div>
-                   <div className="topteams">
-                   <h1>Rankings</h1><br/>
-
-                   <p>
-                    Bills Ranking:1<br/>
-                    Chiefs Ranking:2<br/>
-                    49ers Ranking:3<br/>
-                    Eagles Ranking:4<br/>
-                    Bengals Ranking:5<br/>
-                    Cowboys Ranking:6<br/>
-                    Ravens Ranking:7<br/>
-                    Giants Ranking:8<br/>
-                    </p>
-
-
-                    <img src={imgs[1]}/>
-
-                   </div>
-
-
-
-                </div>
-
+                  );
+                })}
+              </div>
+              <div className="grid">
+                <img src={imgs[0]} />
+              </div>
             </div>
-        </div>
-    )
+          </div>
+          <div>
+            <div className="topteams">
+              <div className="grids grids-2">
+                <div className="grid">
+                  <img src={imgs[1]} />
+                </div>
+                <div className="grid">
+                  <h1>Top Teams</h1>
 
+                  <p>
+                    {topTeams.map((team) => {
+                      return (
+                        <p>
+                          {team.name}, Rating: {team.rating}
+                          <br />
+                        </p>
+                      );
+                    })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

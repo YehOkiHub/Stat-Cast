@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import Auth from "./../utils/auth";
 
 function Nav() {
-
-    return(
-        <div className="container">
+  return (
+    <div className="container">
+      <div className="wrapper">
         <nav className="nav">
-        <img className="logo" src={"https://dolphinseer.files.wordpress.com/2022/05/image-18.png"}/>
+          <img
+            className="logo"
+            src={"https://dolphinseer.files.wordpress.com/2022/05/image-18.png"}
+          />
           <ul>
             <li>
               <Link className="navLink" to={"/"}>
@@ -29,33 +32,39 @@ function Nav() {
                 Shop
               </Link>
             </li>
-            
+
             {!Auth.loggedIn() ? (
-              <><li>
-              <Link className="navLink" to={"/login"}>
-                Login
-              </Link>
-            </li> </>
-            )
-          : (<><li>
-            <Link className="navLink" to={"/profile"}>
-              Profile
-            </Link>
-          </li><li>
-            <Link className="navLink" to={"#"} onClick={Auth.logout}>
-              Logout
-            </Link>
-          </li> </>)
-          
-          }
-            
-
-
-            
+              <>
+                <li>
+                  <Link className="navLink" to={"/login"}>
+                    Login
+                  </Link>
+                </li>{" "}
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link className="navLink" to={"/profile"}>
+                    Profile
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link className="navLink" to={"/profile"}>
+                    Profile
+                  </Link>
+                </li> */}
+                <li>
+                  <Link className="navLink" to={"#"} onClick={Auth.logout}>
+                    Logout
+                  </Link>
+                </li>{" "}
+              </>
+            )}
           </ul>
         </nav>
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Nav
+export default Nav;

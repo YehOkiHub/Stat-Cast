@@ -1,36 +1,34 @@
-const {gql} = require("apollo-server-express");
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type User {
-    _id: ID    
+  type User {
+    _id: ID
     username: String!
     email: String!
     password: String!
     favplayer: String
     favteam: String
-}
-type Team {
-    _id: ID    
+  }
+  type Team {
+    _id: ID
     name: String!
-    rating: Int!   
-
-}
-type Stats {
-    _id: ID    
+    rating: Int!
+  }
+  type Stats {
+    _id: ID
     name: String!
-    age: Int! 
+    age: Int!
     teamId: ID
     rating: Int!
     position: String!
     team: String
-
-}
-type Player {
-    _id: ID    
+  }
+  type Player {
+    _id: ID
     name: String!
-    age: Int! 
+    age: Int!
     teamId: ID
-    team: String!
+    team: String
     rating: Int!
     position: String!
     passing: Int!
@@ -39,31 +37,41 @@ type Player {
     fumbles: Int!
     tackles: Int!
     interceptions: Int!
-
-
-}
-type Query {
+  }
+  type Query {
     users: [User]
     teams: [Team]
     players: [Player]
     me: User
-    
-   
-
-}
-type Mutation {
+    topplayers: [Player]
+    topteams: [Team]
+    products: [Product]
+    favTeamsOfUser(userId: ID): String
+  }
+  type Mutation {
     addUser(email: String, password: String, username: String): User
     auth(password: String, username: String): Auth
-}
+    checkout(price: Int): String
+    saveFavTeam(userId: ID, name: String): String
+    deleteFavTeam(name: String, userId: ID): String
+  }
 
-type Auth {
+  type Auth {
     token: String
     user: User
+  }
 
+  type Product {
+    _id: ID
+    name: String!
+    price: Int!
+    autograph: String!
+    description: String!
+    img: String
+  }
+  type Stripe {
+    price: Int!
+  }
+`;
 
-}
-
-
-`
-
-module.exports = typeDefs
+module.exports = typeDefs;
