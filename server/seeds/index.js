@@ -4,22 +4,135 @@ const { Player, Team } = require("./../models");
 async function run() {
   const teams = [
     {
-      name: "Kansas City Chiefs",
+      name: "Arizona Cardinals",
+      rating: 70,
+    },
+    {
+      name: "Atlanta Falcons",
+      rating: 78,
+    },
+    {
+      name: "Carolina Panthers",
+      rating: 76,
+    },
+    {
+      name: "Chicago Bears",
+      rating: 68,
+    },
+    {
+      name: "Dallas Cowboys",
+      rating: 90,
+    },
+    {
+      name: "Detroit Lions",
+      rating: 86,
+    },
+    {
+      name: "Green Bay Packers",
+      rating: 85,
+    },
+    {
+      name: "Los Angeles Rams",
+      rating: 73,
+    },
+    {
+      name: "Minnesota Vikings",
+      rating: 91,
+    },
+    {
+      name: "New Orleans Saints",
+      rating: 78,
+    },
+    {
+      name: "New York Giants",
+      rating: 83,
+    },
+    {
+      name: "Philadelphia Eagles",
+      rating: 98,
+    },
+    {
+      name: "San Francisco 49ers",
       rating: 95,
+    },
+    {
+      name: "Seattle Seahawks",
+      rating: 86,
+    },
+    {
+      name: "Tampa Bay Buccaneers",
+      rating: 85,
+    },
+    {
+      name: "Washington Commanders",
+      rating: 85,
+    },
+    {
+      name: "Baltimore Ravens",
+      rating: 92,
+    },
+    {
+      name: "Buffalo Bills",
+      rating: 96,
+    },
+    {
+      name: "Cincinnati Bengals",
+      rating: 95,
+    },
+    {
+      name: "Cleveland Browns",
+      rating: 84,
+    },
+    {
+      name: "Denver Broncos",
+      rating: 74,
+    },
+    {
+      name: "Houston Texans",
+      rating: 66,
+    },
+    {
+      name: "Indianapolis Colts",
+      rating: 70,
+    },
+    {
+      name: "Jacksonville Jaguars",
+      rating: 87,
+    },
+    {
+      name: "Kansas City Chiefs",
+      rating: 99,
+    },
+    {
+      name: "Las Vegas Raiders",
+      rating: 76,
+    },
+    {
+      name: "Los Angeles Chargers",
+      rating: 87,
+    },
+    {
+      name: "Miami Dolphins",
+      rating: 86,
     },
     {
       name: "New England Patriots",
       rating: 85,
     },
     {
-      name: "Green Bay Packers",
+      name: "New York Jets",
+      rating: 84,
+    },
+    {
+      name: "Pittsburgh Steelers",
       rating: 87,
     },
     {
-        name: "New York Giants",
-        rating: 80,
-      }
-  ];
+      name: "Tennessee Titans",
+      rating: 83,
+    },
+  ]
+
   const players = [
     {
       name: "Patrick Mahomes",
