@@ -99,6 +99,17 @@ body {
   z-index: 999;
   
 }
+.Store {
+  max-height: 700px;
+  margin-bottom: 5%;
+  border: solid red 5px;
+  overflow: hidden;
+}
+
+.Donation {
+border: solid red 5px;
+
+}
 
 form {
   width: 100%
@@ -182,4 +193,4 @@ table td {
 
 table thead {
   background-color: lightslategray;
-}
+
