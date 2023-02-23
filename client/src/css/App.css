@@ -1,3 +1,10 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+
 .container{
     width: 100%;
     background-color: rgb(8, 4, 71);
@@ -74,7 +81,13 @@ h1 {
 
 p {
   margin-left: 50px;
+  
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+
 }
 
 .logo {
@@ -86,6 +99,7 @@ p {
   z-index: 999;
   
 }
+<<<<<<< HEAD
 .Store {
   max-height: 700px;
   margin-bottom: 5%;
@@ -97,3 +111,89 @@ p {
 border: solid red 5px;
 
 }
+=======
+
+form {
+  width: 100%
+}
+
+form input {
+  font-size: 18px;
+  font-family: inherit;
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 2px solid lightgray;
+}
+
+form .group{
+
+  margin-bottom: 20px;
+}
+
+.button {
+
+  padding:14px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgb(8, 4, 71);
+  color: white;
+  font-size: 18px;
+  
+}
+
+.accContainer {
+  margin-top:50px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.accContainer form {
+
+  max-width: 600px;
+}
+
+
+.aboutImg{
+
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  box-shadow: 5px 5px .4em rgb(3, 2, 40), -1em 0  rgb(243, 9, 9);
+  
+}
+
+.profilepic {
+
+  margin-top: 180px;
+  float: left;
+  position: absolute;
+  top: 200px;
+  left: -300px;
+  
+}
+
+.pageName {
+
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid grey;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 20px;
+}
+
+table thead {
+  background-color: lightslategray;
+}
+

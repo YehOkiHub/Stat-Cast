@@ -1,33 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import css from "./css/App.css";
-import Home from "./../src/components/Home";
-import Stats from "./../src/components/Stats";
-import Shop from "./../src/components/Shop";
-import Teams from "./../src/components/Teams";
+import App from "./App"
 
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-const routes = createBrowserRouter([
-    {
-        path: "/",
-        element: <Home/>
-    }, 
-    {
-        path: "/Stats",
-        element: <Stats/>
 
-    },
-    {
-        path: "/Shop",
-        element: <Shop/>
+ReactDOM.render(<App/>, document.getElementById("root"));
 
-    },
-    {
-        path: "/Teams",
-        element: <Teams/>
 
-    }
-
-])
-ReactDOM.render(<RouterProvider router={routes}/>, document.getElementById("root"));

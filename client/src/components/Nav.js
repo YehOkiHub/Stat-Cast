@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Auth from "./../utils/auth";
 
 function Nav() {
 
@@ -14,20 +15,42 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <Link className="navLink" to={"/Stats"}>
+              <Link className="navLink" to={"/stats"}>
                 Stats
               </Link>
             </li>
             <li>
-              <Link className="navLink" to={"/Teams"}>
+              <Link className="navLink" to={"/teams"}>
                 Teams
               </Link>
             </li>
             <li>
-              <Link className="navLink" to={"/Shop"}>
+              <Link className="navLink" to={"/shop"}>
                 Shop
               </Link>
             </li>
+            
+            {!Auth.loggedIn() ? (
+              <><li>
+              <Link className="navLink" to={"/login"}>
+                Login
+              </Link>
+            </li> </>
+            )
+          : (<><li>
+            <Link className="navLink" to={"/profile"}>
+              Profile
+            </Link>
+          </li><li>
+            <Link className="navLink" to={"#"} onClick={Auth.logout}>
+              Logout
+            </Link>
+          </li> </>)
+          
+          }
+            
+
+
             
           </ul>
         </nav>
